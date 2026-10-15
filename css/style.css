@@ -1,0 +1,433 @@
+:root {
+  --primarycolor: #ff274b;
+  --secondarycolor: #f7bcf7;
+  --lightcolor: #ffffff;
+  --bgcolor-1: #171a1c;
+  --bgcolor-2: #22282a;
+  --padding: 8%;
+}
+html, body {
+  background-color: var(--bgcolor-1);
+  overflow-x: hidden;
+}
+p{
+ font-size: 1.2rem;
+ letter-spacing: 0.12rem;
+ color: var(--secondarycolor); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  color: var(--lightcolor);
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh; /* Changed height to min-height */
+  background-color: var(--bgcolor-1);
+  display: flex;
+  flex-direction: column;
+    overflow-x: hidden; 
+}
+
+span {
+  color: var(--primarycolor);
+}
+
+h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.12rem;
+  cursor: pointer;
+}
+
+nav {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  padding-top: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0.8rem 1.5rem;
+}
+
+nav ul li a {
+  color: var(--lightcolor);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.4s;
+}
+
+nav ul li a:hover {
+  color: var(--primarycolor);
+}
+
+.btn {
+  background-color: var(--primarycolor);
+  color: var(--lightcolor);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.81rem 1.87rem;
+  border-radius: 30px;
+  transition: 0.4s;
+  border: 2px solid var(--primarycolor);
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--primarycolor);
+}
+
+.content {
+  padding: 0 var(--padding);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 4.65rem;
+  margin: 0.5rem 0;
+}
+
+h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.15rem;
+  color: var(--secondarycolor);
+}
+
+.container-texts {
+  position: relative;
+}
+.social {
+  margin-top: 3.5rem;
+}
+
+.social img {
+  margin-right: 2rem;
+  width: 2.5rem;
+}
+
+.social img:hover{
+transform:scale(1.2);
+transition: 0.4s;
+}
+.home .container-images {
+  width: 45%;
+  height: 80vh;          /* real height, so child percentages work */
+  position: relative;
+  align-self: flex-end;
+}
+.home .container-images img{
+  position: absolute;
+  bottom: 0;
+  transition: 0.4s;
+}
+.shape { z-index: 1; } 
+.pic   { z-index: 2; }
+.shape {
+  z-index: 1;
+  height: 95%;           /* big blob behind the man */
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pic {
+  z-index: 2;
+  height: 100%;          /* man fits inside the container */
+  width: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav {
+  position: relative;
+  z-index: 10;           /* keep the menu clickable above the image */
+}
+.container-images:hover .shape{
+  transform: translate(-50%, -50%) translateY(-40px);  
+}
+.container-images:hover .pic{
+ left:40%; 
+}
+.about {
+background-color: var(--bgcolor-2);
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+.about .container-images{
+  width:35%;
+}
+.about .container-images img {
+  width: 100%;      /* fill the 35% container */
+  height: auto;     /* keep the proportions */
+  display: block;   /* removes the small gap under images */
+  padding: var(--padding);
+}
+.about .container-texts{
+  width: 35%;
+}
+.servesies{
+background-color: var(--bgcolor-1);
+padding:2rem var(--padding);
+
+}
+.text-center{
+  text-align: center;
+}
+
+.card{
+    background-color: var(--bgcolor-2);
+  border-radius: 25px;
+  padding: 1.3rem 2rem;
+}
+.card i{
+  font-size:3.12rem;
+  text-align: center;
+  color: var(--primarycolor);
+  margin: 2.5rem;
+  text-align: center;
+}
+.skills {
+background-color: var(--bgcolor-2);
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+.skills .container-images{
+  width:35%;
+}
+.skills .container-images img {
+  width: 100%;      /* fill the 35% container */
+  height: auto;     /* keep the proportions */
+  display: block;   /* removes the small gap under images */
+  padding: var(--padding);
+}
+.skills .content-skills{
+  width: 40%;
+}
+.skill {
+  width: 6rem;            /* same box for every icon */
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--lightcolor);
+    border-radius: 30px;
+}
+.content-skills{
+  display:flex;
+  flex-wrap: wrap;
+   gap: 1.5rem;
+  margin-top: 2rem;
+}
+.skill img{
+  width:40%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  width:70%;
+}
+footer{
+  padding: 2rem var(--padding);
+  background-color: var(--bgcolor-1);
+
+}
+footer .content-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .content-footer p{
+color:var(--lightcolor);
+text-align:center;
+width: 500px;
+
+}
+#menu-toggle{
+  display: none;        /* المربع نفسه لا نريد رؤيته */
+}
+
+.menu-btn{
+  display: none;        /* الزر مخفي على الشاشات الكبيرة */
+  color: var(--lightcolor);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+#menus{
+  display:none;
+  position:relative;
+  appearance: none;
+  border:none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+}
+#menus span{
+display: block;
+width: 33px;
+height:4px;
+background-color: var(--lightcolor);
+border-radius: 6px;
+transform-origin: 0 0;
+transition:0.4s;
+margin-bottom: 5px;
+
+}
+#menus.is-active span:nth-child(1) {
+  transform: translate(0px, -2px) rotate(45deg);
+}
+
+#menus.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+#menus.is-active span:nth-child(3) {
+  transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+#menus.is-active span {
+  background-color: var(--primarycolor);
+}
+.box{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+@media screen and (max-width: 900px) and (min-height: 600px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+.home .container-images {
+  width: 70%;
+  height: 50vh;
+  min-height: 320px;
+  margin-top: 2rem;
+  align-self: center;
+}
+  .skills {
+    flex-direction: column;
+    padding: 2rem var(--padding);
+    gap: 2rem;
+  }
+
+  .about .container-texts,
+  .skills .container-skills {
+    width: 100%;
+  }
+
+  footer .content-footer p {
+    width: 100%;
+  }
+
+}
+@media screen and  (max-width:767px){
+:root{
+  html, body {
+    overflow-x: hidden;
+}
+--padding:1.5rem;
+}
+html{
+  font-size: 13px;
+}
+#home > div > div.container-images{
+  display:none;
+}
+#home > nav > a{
+display:none;
+}
+.menu-btn{
+  display: block;
+}
+
+nav ul{
+  display: none;                 /* مخفية افتراضياً */
+  position: fixed;
+  top: 82px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 82px);
+  background-color: var(--bgcolor-2);
+  text-align: center;
+  padding-top: 2rem;
+}
+nav ul.is-active{
+  display: block;
+}
+nav ul.open{
+  display: block;
+}
+nav{
+  padding-top: 0;
+  position: fixed;
+  top:0;
+  left:0;
+    width: 100%; 
+  height: 82px;
+  background-color: var(--bgcolor-1);
+  border-bottom:  1px solid var(--bgcolor-2);
+  z-index: 1000;
+}
+ #menu-toggle:checked ~ ul{
+  display: block;                /* تظهر عند تفعيل الـcheckbox */
+}
+
+nav ul li{
+  display: block;
+  margin: 0;
+  padding: 1.6rem 0;
+}
+#menus{
+ display: block; 
+}
+body > section.about > div.container-images > img{
+  display: none;
+}
+body > section.about > div.container-texts{
+ width: 100%; 
+}
+
+body > section.skills > div.container-images > img{
+display:none;
+}
+.skills {
+  width: 100%;
+background-color: var(--bgcolor-2);
+display: flex;
+}
+body > section.skills > div.container-skills > div{
+  width: 100%;
+}
+body > footer > div > p{
+  width: 100%;
+}
+.content-footer{
+  width: 100%;
+}
+footer .content-footer p {
+  width: 100%;
+}
+   .skills { padding: 2rem var(--padding); }
+}
